@@ -33,3 +33,15 @@ class Candidates(models.Model):
 
     def __str__(self):
         return self.name
+
+class Jobs(models.Model):
+    company = models.IntegerField(null=False)
+    name = models.CharField(max_length=200, null=True)
+    position = models.CharField(max_length=200, null=True)
+    description = models.CharField(max_length=2000, null=True)
+    salary = models.IntegerField(null=True)
+    experience = models.IntegerField(null=True)
+    Location = models.CharField(max_length=2000, null=True)
+
+    def __str__(self):
+        return self.name

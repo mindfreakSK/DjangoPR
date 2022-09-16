@@ -68,3 +68,11 @@ def applyPage(request):
             return redirect('home')
     context = {'form': form}
     return render(request, 'apply.html', context)
+
+def jobsPage(request):
+    companies = Jobs.objects.all()
+    context = {
+            'companies': companies,
+        }
+
+    return render(request, 'showjobs.html', context)
